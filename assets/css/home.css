@@ -1,0 +1,17 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.banner{
+    background: url(../svg/waves.svg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+
+
+} 
