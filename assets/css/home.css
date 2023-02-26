@@ -1,17 +1,19 @@
+body {
+    overflow-y: hidden;
+}
 
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+.containerContent {
+    background-color: #fbf3f1;
+}
+
+.pDescripcion {
+    text-align: justify;
+
 }
 
 .banner{
-    background: url(../svg/waves.svg);
     width: 100%;
     height: 100vh;
     background-size: cover;
     background-position: center;
-
-
 } 
