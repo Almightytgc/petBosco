@@ -16,14 +16,6 @@
     height: 90px;
 }
 
-@media (max-width:992px){
-    .encabezado {
-        background-color: #3f3434;
-        width: 100%;
-        height: 160px;
-    }
-  }
-
 .navName {
     color: #fff;
     font-weight: bolder;
