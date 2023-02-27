@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 27-02-2023 a las 23:31:06
+-- Tiempo de generación: 27-02-2023 a las 23:42:26
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 8.1.9
 
@@ -60,15 +60,16 @@ CREATE TABLE `cliente` (
   `fechaNac` date NOT NULL,
   `num_telefonico` varchar(11) NOT NULL,
   `direccion` varchar(200) NOT NULL,
-  `DUI` varchar(11) NOT NULL
+  `DUI` varchar(11) NOT NULL,
+  `contraseña` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`id_cliente`, `nombre`, `apellido`, `fechaNac`, `num_telefonico`, `direccion`, `DUI`) VALUES
-(1, 'ale', 'jimenez', '2023-02-14', '22866916', 'mi casa', '12345678900');
+INSERT INTO `cliente` (`id_cliente`, `nombre`, `apellido`, `fechaNac`, `num_telefonico`, `direccion`, `DUI`, `contraseña`) VALUES
+(1, 'ale', 'jimenez', '2023-02-14', '22866916', 'mi casa', '12345678900', '');
 
 -- --------------------------------------------------------
 
@@ -80,15 +81,16 @@ CREATE TABLE `clinicavet` (
   `id_clinicaVet` int(11) NOT NULL,
   `nombreVeterinaria` varchar(11) NOT NULL,
   `numTelefonico` varchar(11) NOT NULL,
-  `direccion` varchar(200) NOT NULL
+  `direccion` varchar(200) NOT NULL,
+  `ContraseñaAdmin` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `clinicavet`
 --
 
-INSERT INTO `clinicavet` (`id_clinicaVet`, `nombreVeterinaria`, `numTelefonico`, `direccion`) VALUES
-(1, 'PetBosco', '1234245', 'una casa y giro');
+INSERT INTO `clinicavet` (`id_clinicaVet`, `nombreVeterinaria`, `numTelefonico`, `direccion`, `ContraseñaAdmin`) VALUES
+(1, 'PetBosco', '1234245', 'una casa y giro', '');
 
 -- --------------------------------------------------------
 
@@ -185,15 +187,16 @@ CREATE TABLE `veterinario` (
   `num_telefonico` varchar(11) NOT NULL,
   `id_veterinario` int(11) NOT NULL,
   `fk_mascota` int(11) NOT NULL,
-  `fk_clinicaVeterinario` int(11) NOT NULL
+  `fk_clinicaVeterinario` int(11) NOT NULL,
+  `Constraseña` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `veterinario`
 --
 
-INSERT INTO `veterinario` (`fechaNac`, `Especialidad`, `Nombres`, `Apellidos`, `num_telefonico`, `id_veterinario`, `fk_mascota`, `fk_clinicaVeterinario`) VALUES
-('2023-02-12', 'e', 'pedrito', 'aguilar', '12345', 1, 1, 1);
+INSERT INTO `veterinario` (`fechaNac`, `Especialidad`, `Nombres`, `Apellidos`, `num_telefonico`, `id_veterinario`, `fk_mascota`, `fk_clinicaVeterinario`, `Constraseña`) VALUES
+('2023-02-12', 'e', 'pedrito', 'aguilar', '12345', 1, 1, 1, '');
 
 --
 -- Índices para tablas volcadas
