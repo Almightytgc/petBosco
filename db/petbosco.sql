@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 27-02-2023 a las 23:23:30
+-- Tiempo de generación: 27-02-2023 a las 23:31:06
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 8.1.9
 
@@ -138,7 +138,8 @@ INSERT INTO `mascota` (`id_mascota`, `Apodo_mascota`, `raza`, `color`, `Altura`,
 CREATE TABLE `monedero` (
   `id_monedero` int(11) NOT NULL,
   `saldoDisp` decimal(3,2) NOT NULL,
-  `tarjetaOcupada` varchar(11) NOT NULL
+  `tarjetaOcupada` varchar(11) NOT NULL,
+  `fk_cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -242,7 +243,8 @@ ALTER TABLE `mascota`
 -- Indices de la tabla `monedero`
 --
 ALTER TABLE `monedero`
-  ADD PRIMARY KEY (`id_monedero`);
+  ADD PRIMARY KEY (`id_monedero`),
+  ADD KEY `fk_ClienteMonedero` (`fk_cliente`);
 
 --
 -- Indices de la tabla `pago`
@@ -347,6 +349,12 @@ ALTER TABLE `expediente`
 --
 ALTER TABLE `mascota`
   ADD CONSTRAINT `fk_clienteMascota` FOREIGN KEY (`fk_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `monedero`
+--
+ALTER TABLE `monedero`
+  ADD CONSTRAINT `fk_ClienteMonedero` FOREIGN KEY (`fk_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `pago`
